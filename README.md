@@ -7,3 +7,6 @@
 
 ## Complete
 Good code, Bad code
+
+## Notion
+https://marshy-crowd-738.notion.site/41c8e1b969c34b3ea3ac900cb91710ed?pvs=4
