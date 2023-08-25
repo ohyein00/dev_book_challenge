@@ -1,0 +1,65 @@
+## 세트
+
+자바스크립트 프로그래밍에서는 객체를 맵과 세트처럼 사용하는 일이 흔하지만 키가 문자열이어야 한다는 제약이 있음.
+
+## Set 클래스
+
+1. 배열과 마찬가지인 값의 집합
+2. 순서와 인덱스가 없음
+3. 중복 허용하지 않음
+4. 이터러블 객체 모두 인자가 될 수 있음
+
+```tsx
+let s = new Set()
+let t = new Set([1,s])
+let nt = new Set(s) // s를 복사한 세트
+let unique = new Set("Mississippi") // M i s p
+```
+
+### size / add / delete / clear
+
+세트의 값을 조작하는 메서드들.
+
+세트를 찾을 때 일치 여부는 === 연산자처럼 엄격함. 
+
+```tsx
+s.add([1,2,3])
+s.delete([1,2,3]) -> false
+```
+
+### 요소 순회
+
+```tsx
+let sum = 0;
+let setData = [1,2,3]
+for(let p of setData){
+sum+=p
+} --> 6
+[...setData] // [1,2,3]
+Max.max(...setData) // 3
+```
+
+→ 자바스크립트의 세트는 요소가 삽입된 순서를 기억해 순회할 때 순서가 보장됨
+
+## 맵
+
+- Map 객체는 키로 구성된 값 집합이며 각 키는 다시 다른 값과 연결됨.
+- 임의의 값을 인덱스로 사용 가능.
+- 크기와 상관없이 키와 연결된 값을 빨리 찾을 수 있음
+
+```jsx
+let m = new Map()
+let n = new Map(['one',1],['two',2])
+let copy = new Map(n) // 같은 키와 값의 맵
+let o = {x:1,y:2};
+let p = new Map(Object.entries(o)); ['x',1],['y',2]
+```
+
+인자는 [key,value]배열을 전달하는 이터러블 객체여야 함
+
+### 메서드
+
+- get : 주어진 키와 연결된 값 검색
+- set : 키-값 쌍 추가. 하지만 연결되는 것이지 집합이 아님 . 이미 존재하는 키를 추가하면 연결된 값을 수정. 추가가 아님
+- has, delete, size 등…
+- keys(), values() : 키와 값을 삽입 순서대로 순회하는 이터러블 객체 반환.
